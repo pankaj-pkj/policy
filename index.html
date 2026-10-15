@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Whiteboard Studio Pro</title>
+  <meta name="description" content="Official Privacy Policy and Data Safety disclosures for Whiteboard Studio Pro on Google Play Store." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-bg: #0e131f;
+      --card-border: #1e2638;
+      --card-hover: #161e31;
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --primary: #38bdf8;
+      --primary-glow: rgba(56, 189, 248, 0.25);
+      --indigo: #6366f1;
+      --emerald: #10b981;
+      --amber: #f59e0b;
+      --rose: #f43f5e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.7;
+      font-size: 15px;
+      overflow-x: hidden;
+    }
+
+    /* Ambient background glow */
+    .ambient-glow {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 1100px;
+      height: 480px;
+      background: radial-gradient(circle at 50% 15%, rgba(99, 102, 241, 0.18) 0%, rgba(56, 189, 248, 0.12) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Sticky Navbar */
+    header {
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(7, 9, 14, 0.82);
+      border-bottom: 1px solid rgba(30, 38, 56, 0.7);
+      z-index: 50;
+      padding: 14px 20px;
+    }
+
+    .nav-container {
+      max-width: 1020px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1e1b4b, #312e81);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      box-shadow: 0 4px 12px var(--primary-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.2px;
+    }
+
+    .brand-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .dot-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    /* Container */
+    .main-wrap {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 44px 20px 80px;
+      z-index: 1;
+    }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      color: #a5b4fc;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: 34px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.25;
+      letter-spacing: -0.8px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .meta-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .meta-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* 3 Highlights Cards */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .highlight-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    .h-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .h-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .h-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* Main Content Layout */
+    .content-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 22px;
+      padding: 38px 32px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    @media (max-width: 640px) {
+      .content-box {
+        padding: 24px 18px;
+      }
+      .hero h1 {
+        font-size: 27px;
+      }
+    }
+
+    /* Section Styling */
+    section {
+      margin-bottom: 34px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid rgba(30, 38, 56, 0.8);
+    }
+
+    section:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.3px;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    p {
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      font-size: 14.5px;
+    }
+
+    p strong {
+      color: #fff;
+    }
+
+    ul {
+      list-style: none;
+      margin-bottom: 14px;
+    }
+
+    li {
+      position: relative;
+      padding-left: 24px;
+      margin-bottom: 10px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    li::before {
+      content: "✔";
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* Callout Note Box */
+    .note-box {
+      background: rgba(14, 27, 49, 0.7);
+      border-left: 4px solid var(--primary);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin: 16px 0;
+      font-size: 13.5px;
+      color: #cbd5e1;
+    }
+
+    .note-box.emerald {
+      background: rgba(6, 43, 31, 0.6);
+      border-left-color: var(--emerald);
+      color: #d1fae5;
+    }
+
+    /* Table */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 13px;
+    }
+
+    .perm-table th, .perm-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border: 1px solid var(--card-border);
+    }
+
+    .perm-table th {
+      background: #141c2c;
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .perm-table td {
+      background: rgba(14, 19, 31, 0.5);
+      color: var(--text-muted);
+    }
+
+    code {
+      background: #1e293b;
+      color: #38bdf8;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-family: monospace;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: var(--text-dim);
+      font-size: 13px;
+    }
+
+    footer a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ambient-glow"></div>
+
+  <!-- Sticky Header -->
+  <header>
+    <div class="nav-container">
+      <a href="#" class="brand">
+        <div class="brand-icon">
+          <img src="app_logo.png" alt="Whiteboard Studio Pro" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/google/material-design-icons/master/png/image/draw/materialicons/48dp/2x/baseline_draw_white_48dp.png';" />
+        </div>
+        <span class="brand-title">Whiteboard Studio Pro</span>
+      </a>
+      <div class="brand-badge">
+        <span class="dot-pulse"></span>
+        Play Store Verified
+      </div>
+    </div>
+  </header>
+
+  <main class="main-wrap">
+
+    <!-- Hero Title -->
+    <div class="hero">
+      <div class="hero-badge">
+        🛡️ OFFICIAL DATA SAFETY &amp; PRIVACY POLICY
+      </div>
+      <h1>Privacy Policy for <span>Whiteboard Studio Pro</span></h1>
+      <div class="meta-info">
+        <div class="meta-pill">📅 Effective Date: <strong>October 2026</strong></div>
+        <div class="meta-pill">📱 Package: <code>com.smartboard.studio.pro</code></div>
+        <div class="meta-pill">⚖️ Compliance: <strong>GDPR • CCPA • COPPA</strong></div>
+      </div>
+    </div>
+
+    <!-- 3 Highlights Cards -->
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="h-icon" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;">📂</div>
+        <div class="h-title">100% Local-First Storage</div>
+        <div class="h-desc">Your sketches, formulas, and PDF documents are saved locally on your physical device storage. We operate zero cloud databases.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="h-icon" style="background: rgba(16, 185, 129, 0.15); color: #10b981;">👤</div>
+        <div class="h-title">Zero Personal Accounts</div>
+        <div class="h-desc">No login, passwords, phone numbers, or email addresses required. Open the app and start sketching instantly.</div>
+      </div>
+      <div class="highlight-card">
+        <div class="h-icon" style="background: rgba(99, 102, 241, 0.15); color: #818cf8;">🔒</div>
+        <div class="h-title">User Privacy Disclosures</div>
+        <div class="h-desc">Compliant with Google Play Store advertising ID policies, offline mode guarantees, and transparent one-tap data deletion.</div>
+      </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="content-box">
+
+      <!-- Section 1 -->
+      <section>
+        <h2><span class="num">1</span> Overview &amp; Local Architecture</h2>
+        <p>
+          <strong>Whiteboard Studio Pro</strong> ("the App", "we", "our") is designed as a privacy-focused interactive digital whiteboard, classroom presentation tool, and PDF annotation software.
+        </p>
+        <p>
+          Our foundational engineering principle is <strong>Local-First Processing</strong>. When you draw diagrams, solve geometry problems, or mark up study materials, all data remains stored in your device's isolated application storage sandbox. We do not transmit, harvest, sell, or sync your private whiteboard sketches to any remote server or third-party cloud.
+        </p>
+        <div class="note-box emerald">
+          ✔ <strong>Offline Guarantee:</strong> You can use Whiteboard Studio Pro completely offline (Airplane Mode) with zero degradation of drawing, saving, geometry tools, and PDF annotation features.
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h2><span class="num">2</span> Device Permissions &amp; Data Access</h2>
+        <p>
+          The App requests only the strictly minimal Android operating system permissions necessary to deliver core features:
+        </p>
+        <table class="perm-table">
+          <thead>
+            <tr>
+              <th>Android Permission</th>
+              <th>Technical Purpose</th>
+              <th>Privacy Safeguard</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>INTERNET</code><br/><code>ACCESS_NETWORK_STATE</code></td>
+              <td>Used solely for loading Google AdMob advertisements (in online mode) and enabling local Wi-Fi / P2P classroom screen sync.</td>
+              <td>Zero sketch or drawing data is uploaded. Operates without internet in offline mode.</td>
+            </tr>
+            <tr>
+              <td><code>CAMERA</code> <em>(Optional)</em></td>
+              <td>Allows users to take a photo of a math worksheet, textbook, or diagram to annotate on the board.</td>
+              <td>Only accessed upon user tap. Images remain on the device canvas.</td>
+            </tr>
+            <tr>
+              <td><code>READ_MEDIA_IMAGES</code><br/><code>Scoped Storage</code></td>
+              <td>Allows selecting an image or PDF document from your gallery/files to import as a canvas layer.</td>
+              <td>Android system file picker is used; we only access the single file explicitly chosen by you.</td>
+            </tr>
+            <tr>
+              <td><code>com.google.android.gms.permission.AD_ID</code></td>
+              <td>Used by Google Mobile Ads SDK on Android 13+ for frequency capping and fraud prevention.</td>
+              <td>No personal name or sketch data is linked to your advertising identifier.</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 3 -->
+      <section>
+        <h2><span class="num">3</span> Advertising &amp; Google AdMob</h2>
+        <p>
+          To keep Whiteboard Studio Pro freely accessible, the App displays advertisements served by <strong>Google AdMob</strong> when connected to the internet.
+        </p>
+        <p>Google AdMob may collect and process telemetry data including:</p>
+        <ul>
+          <li>Google Advertising ID (<code>AD_ID</code>) for ad measurement and frequency capping.</li>
+          <li>Coarse device information (device model, operating system version, and general IP address region).</li>
+          <li>Ad interaction metrics (impressions, clicks, and rewarded video completion).</li>
+        </ul>
+        <p>
+          All ad serving complies with the <a href="https://policies.google.com/technologies/ads" target="_blank" style="color: #38bdf8;">Google Advertising Policy &amp; Terms</a>. You can reset or delete your Advertising ID at any time in your phone's <em>Android Settings ➡️ Google ➡️ Ads</em>.
+        </p>
+        <div class="note-box">
+          ℹ️ <strong>Ad Frequency Safety:</strong> Automatic full-screen interstitial ads strictly observe a minimum 3-minute cooldown timer, ensuring an uninterrupted educational experience.
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section>
+        <h2><span class="num">4</span> AI Features &amp; Google Gemini API</h2>
+        <p>
+          Whiteboard Studio Pro includes optional smart teaching capabilities (AI Math Explainer, Handwriting OCR, and Practice Exam Generator) powered by the Google Gemini API.
+        </p>
+        <ul>
+          <li><strong>Bring Your Own Key (BYOK):</strong> Users and teachers can enter their personal Google Gemini API key.</li>
+          <li><strong>Encrypted On-Device Storage:</strong> Your Gemini API key is stored locally in encrypted Hive storage on your physical device.</li>
+          <li><strong>No Model Training:</strong> Your private questions or formulas are sent directly to the official Google Gemini endpoint over HTTPS and are not used by us to train AI models.</li>
+        </ul>
+      </section>
+
+      <!-- Section 5 -->
+      <section>
+        <h2><span class="num">5</span> Children’s Privacy (COPPA &amp; FERPA)</h2>
+        <p>
+          Whiteboard Studio Pro is widely utilized in classrooms and homes by teachers, parents, and students of all age groups.
+        </p>
+        <ul>
+          <li>We do <strong>not</strong> knowingly collect, harvest, or request personal information from children under 13 years of age.</li>
+          <li>The App does not require account creation, social logins, real names, or chat rooms.</li>
+          <li>In classroom and student modes, ads are filtered to family-safe categories compliant with Google Play Families Policy.</li>
+        </ul>
+      </section>
+
+      <!-- Section 6 -->
+      <section>
+        <h2><span class="num">6</span> User Rights, Data Control &amp; Deletion</h2>
+        <p>
+          Under global privacy regulations (including GDPR, CCPA, and Indian IT Rules), you have total ownership and control over your data:
+        </p>
+        <ul>
+          <li><strong>Individual Deletion:</strong> Tap the 3-dots icon on any saved sketch card on the home screen to instantly delete that sketch and its thumbnail.</li>
+          <li><strong>One-Tap Complete Erase:</strong> Open the in-app <em>Privacy &amp; Data Safety</em> dialog and tap <strong>"Delete All Saved Sketches &amp; Data"</strong> to permanently purge all cached notes and local settings.</li>
+          <li><strong>Uninstall Erase:</strong> Uninstalling the App immediately removes all sandboxed files from your Android device.</li>
+        </ul>
+      </section>
+
+      <!-- Section 7 -->
+      <section>
+        <h2><span class="num">7</span> Security Measures</h2>
+        <p>
+          We implement rigorous cryptographic and operating system safeguards to protect user experience:
+        </p>
+        <ul>
+          <li>Anti-tampering verification to prevent modified or malware-injected clones from running.</li>
+          <li>All network communications (AdMob, AI requests, P2P sync) utilize industry-standard TLS 1.3 encryption.</li>
+        </ul>
+      </section>
+
+      <!-- Section 8 -->
+      <section>
+        <h2><span class="num">8</span> Contact Us</h2>
+        <p>
+          If you have questions, feedback, or compliance inquiries regarding this Privacy Policy or our data practices, please contact our developer team:
+        </p>
+        <div class="note-box" style="background: rgba(30, 41, 59, 0.7); border-left-color: #818cf8;">
+          👨‍💻 <strong>Developer Team:</strong> SmartBoard Studio Lab / Coder Kida<br/>
+          📧 <strong>Email:</strong> <a href="mailto:support@coderkida.com" style="color: #38bdf8;">support@coderkida.com</a><br/>
+          🌐 <strong>App Package:</strong> <code>com.smartboard.studio.pro</code><br/>
+          📍 <strong>Publisher:</strong> India
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>© 2026 Whiteboard Studio Pro. All rights reserved.</p>
+      <p style="margin-top: 6px; font-size: 12px;">Built for Google Play Store &amp; Designed with Modern Privacy Standards.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
